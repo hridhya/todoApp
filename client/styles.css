@@ -1,0 +1,32 @@
+#inputItem{
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+#user{
+    text-transform: uppercase;
+}
+
+.login-form{
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+#inputUsername{
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+#inputPassword{
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 970px;
+    }
+}
+.custom {
+    width: 100px !important;
+}

@@ -9,13 +9,33 @@
 </head>
 <body ng-app="dexRepo">
 
-    <div ui-view></div>
+    <nav class="navbar navbar-inverse" role="navigation" ng-controller="NavCtrl">
+        <div class="navbar-header">
+            <a class="navbar-brand" ui-sref="#">Todo App</a>
+        </div>
+        <ul class="nav navbar-nav navbar-left">
+            <li id='user' ng-show="isLoggedIn()"><a>{{ currentUser() }}</a></li>
+            <li ng-show="isLoggedIn()"><a ui-sref="home">Home</a></li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+            <li ng-show="isLoggedIn()"><a href="" ng-click="logOut()">Log Out</a></li>
+            <li ng-hide="isLoggedIn()"><a ui-sref="login">Log In</a></li>
+            <li ng-hide="isLoggedIn()"><a ui-sref="signup">Register</a></li>
+            <li><a ui-sref="faq">FAQ</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div ui-view></div>
+    </div>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script src="lib/angular/angular.js"></script>
     <script src="lib/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="app/services/services.js"></script>
     <script src="app/home/home.js"></script>
+    <script src="app/Auth/auth.js"></script>
     <script src="app/app.js"></script>
 </body>
 </html>

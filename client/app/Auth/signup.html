@@ -1,0 +1,15 @@
+<div ng-controller="AuthCtrl">
+    <div class = 'container'>
+        <div id='signup'>
+            <form class = "login-form" name="signupForm" ng-submit='register()'>
+                <h2>Please sign up</h2>
+                <input id = "inputUsername" name='username' type='text' class = "form-control" placeholder="Enter your Name" required autofocus ng-model='user.username'>
+                <br>
+                <input id = "inputPassword" type="password" name='password' class = "form-control"  required placeholder="Password" ng-model='user.password'>
+                <button class = 'btn btn-lg btn-primary btn-block'>Sign Up</button>
+                <a ui-sref="login">Already have an account? <strong>Sign In</strong> ...</a>
+            </form>
+
+        </div>
+    </div>
+</div>

@@ -18,5 +18,4 @@ angular.module('dex.services', [])
 
       }
     }
-
   });
