@@ -1,0 +1,10 @@
+# Created by .ignore support plugin (hsz.mobi)
+##WebStorm files
+.idea
+
+##Angular directory
+bower_components
+client/lib
+
+##node dependencies
+node_modules

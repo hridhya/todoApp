@@ -1,0 +1,11 @@
+{
+  "name": "dexRepo",
+  "version": "0.0.1",
+  "author": "Hridhya",
+
+  "dependencies": {
+    "angular": "~1.3.16",
+    "angular-route": "~1.3.16",
+    "angular-mocks": "~1.3.16"
+  }
+}
