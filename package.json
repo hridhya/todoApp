@@ -1,5 +1,5 @@
 {
-  "name": "dexRepo",
+  "name": "todoApp",
   "version": "0.0.1",
   "main": "server/server.js",
   "scripts": {

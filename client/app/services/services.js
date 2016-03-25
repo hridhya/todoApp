@@ -3,6 +3,20 @@
  */
 angular.module('dex.services', [])
 
-  .factory('Home', function($http){
+  .factory('Todos', function($http){
+
+    return {
+      createTodo: function (item) {
+        return $http({
+          method: 'POST',
+          url: '/api/todos',
+          data: item
+        })
+          .then(function (resp) {
+            return resp;
+          });
+
+      }
+    }
 
   });

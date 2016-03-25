@@ -5,13 +5,18 @@ var express = require('express');
 
 var app = express();
 
+var mongoose = require('mongoose');
+var methodOverride = require('method-override');
 var morgan = require('morgan');
 var parser = require('body-parser');
 
 app.use(morgan('dev'));
 app.use(parser.json());
+app.use(methodOverride());
 
-//require('./config/routes.js')(app);
+mongoose.connect('mongodb://localhost/todo_data_base');
+
+require('./config/routes.js')(app);
 
 app.set("port", 8000);
 
