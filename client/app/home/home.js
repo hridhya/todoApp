@@ -7,10 +7,7 @@ angular.module('dex.home', [])
     $scope.formData = {};
 
     $scope.createTodo = function() {
-      console.log($scope.formData.text);
-
-      $scope.todos.push({text:$scope.formData.text});
-
+      //$scope.todos.push({text:$scope.formData.text});
       Todos.createTodo($scope.formData)
         .catch(function(error){
           console.log(error);

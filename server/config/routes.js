@@ -17,10 +17,8 @@ module.exports = function(app){
   });
 
   app.post('/api/todos', function(req, res) {
-
     Todo.create({
-      text : req.body.text,
-      done : false
+      text : req.body.text
     }, function(err, todo) {
       if (err) {
         res.send(err);
