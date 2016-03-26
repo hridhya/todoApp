@@ -16,7 +16,7 @@ var Q = require('q');
 var jwt = require('express-jwt');
 
 var auth = jwt({secret: 'SECRET', userProperty: 'payload'});
-var username = ''
+var username = '';
 
 module.exports = function(app){
 
