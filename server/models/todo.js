@@ -4,6 +4,7 @@
 var mongoose = require('mongoose');
 
 var Todo = mongoose.model('Todo', {
+  username:String,
   text : String
 });
 

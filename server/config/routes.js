@@ -16,11 +16,13 @@ var Q = require('q');
 var jwt = require('express-jwt');
 
 var auth = jwt({secret: 'SECRET', userProperty: 'payload'});
+var username = ''
 
 module.exports = function(app){
 
   app.post('/api/users/signup', function(req, res, next){
     var user = new User();
+    username = req.body.username;
     user.username = req.body.username;
     user.setPassword(req.body.password);
     user.location = req.body.location;
@@ -43,6 +45,7 @@ module.exports = function(app){
       if(err){ return next(err); }
 
       if(user){
+        username = req.body.username;
         return res.json({token: user.generateJWT()});
       } else {
         return res.status(401).json(info);
@@ -53,7 +56,12 @@ module.exports = function(app){
 
 
   app.get('/api/todos', function(req, res) {
-    Todo.find(function(err, todos) {
+    User.find({username:username},function(err,details){
+      if(err){
+        return next(err);
+      }
+    });
+    Todo.find({username:username}, function(err, todos) {
       if (err) {
         res.send(err);
       }
@@ -63,6 +71,7 @@ module.exports = function(app){
 
   app.post('/api/todos', function(req, res) {
     Todo.create({
+      username: username,
       text : req.body.text
     }, function(err, todo) {
       if (err) {
